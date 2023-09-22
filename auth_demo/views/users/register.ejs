@@ -1,0 +1,24 @@
+<%- include(`${partialsDir}/layouts/header`) %>
+
+<div class="bg-black flex min-h-screen gap-2 justify-center items-center">
+  <div>
+    Register
+    <form action="/register" method="POST">
+      <div class="w-full flex flex-col">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="text-black"/>
+      </div>
+      <div class="w-full flex flex-col">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" class="text-black"/>
+      </div>
+      <div class="w-full flex flex-col">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="text-black"/>
+      </div>  
+      <button type="submit">Register</button>  
+    </form>
+  </div>
+</div>
+
+<%- include(`${partialsDir}/layouts/footer`) %>

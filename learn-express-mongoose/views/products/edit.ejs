@@ -1,0 +1,30 @@
+<h1>Add Product</h1>
+<form action="/products/<%= product.id %>?_method=PATCH" method="POST">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<%= product.name %>">
+  </div>
+  <div>
+    <label for="brand">Brand</label>
+    <input type="text" name="brand" id="brand" value="<%= product.brand %>">
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input type="number" name="price" id="price" value="<%= product.price %>">
+  </div>
+  <div>
+    <label for="color">Color</label>
+    <input type="text" name="color" id="color" value="<%= product.color %>">
+  </div>
+  <div>
+    <label for="name">Category</label>
+    <select name="category" id="category">
+      <option value="Aksesoris" <%= product.category == "Aksesoris" ? "selected" : "" %>>Aksesoris</option>
+      <option value="Topi" <%= product.category == "Topi" ? "selected" : "" %>>Topi</option>
+      <option value="Baju" <%= product.category == "Baju" ? "selected" : "" %>>Baju</option>
+      <option value="Celana" <%= product.category == "Celana" ? "selected" : "" %>>Celana</option>
+      <option value="Sepatu" <%= product.category == "Sepatu" ? "selected" : "" %>>Sepatu</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>

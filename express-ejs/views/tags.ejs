@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs'); %>
+
+    <%- include('partials/navbar.ejs'); %>
+
+  <% if (dataTag.img) { %>
+    <img src="<%= dataTag.img %>" alt="">
+  <% } %>
+  <h1>Tag <%= tag %></h1>
+  <p><%= dataTag.description %></p>
+
+  <h1>Post</h1>
+  <% dataTag.posts.forEach(post => { %>
+    <div style="margin: 20px; background: gray; padding: 10px 20px">
+      <p><%= post.title %></p>
+      <p><%= post.author %></p>
+    </div>
+  <% }) %>
+
+<%- include('partials/footer.ejs') %>

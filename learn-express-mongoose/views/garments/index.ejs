@@ -1,0 +1,23 @@
+<h1>Garments</h1>
+<div>
+  <a href="/garments/create">Create</a>
+
+  <p>
+  <%= flash_message %>
+  </p>
+  <p>
+    <%= flash_message %>
+  </p>
+    
+  <ul>
+    <% garments.forEach((garment) => { %>
+        <li>
+          <a href="/garments/<%= garment._id %>" style="margin: 10px;">
+            <%= garment.name %>
+            <%= garment.price %>
+          </a>
+        </li>
+    <% }); %>
+  </ul>
+
+</div>

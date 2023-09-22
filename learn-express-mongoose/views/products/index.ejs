@@ -1,0 +1,18 @@
+<h1>Products</h1>
+<div>
+  <a href="/products/create">Create</a>
+  <% if(category !== 'All') { %>
+  <a href="/products">All Products</a>
+  <% } %>
+  <ul>
+    <% products.forEach((product) => { %>
+        <li>
+          <a href="/products/<%= product._id %>" style="margin: 10px;">
+            <%= product.name %>
+            <%= product.price %>
+          </a>
+        </li>
+    <% }); %>
+  </ul>
+
+</div>

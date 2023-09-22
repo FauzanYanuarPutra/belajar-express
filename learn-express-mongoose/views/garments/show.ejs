@@ -1,0 +1,18 @@
+<h1><%= garment.name %></h1>
+<ul>
+  <li><%= garment.location %></li>
+  <li><%= garment.contact %></li>
+</ul>
+
+<ul>
+  <% for(let product of garment.products) { %>
+  <li><a href="/products/<%= product._id %>"><%= product.name %></a></li>
+  <% } %>
+</ul>
+
+<a href="/garments/<%= garment._id %>/edit">Edit</a>
+<a href="/garments/<%= garment._id %>/products/create">Add Product</a>
+<form action="/garments/<%= garment._id %>?_method=DELETE" method="POST">
+  <button type="submit">DELETE</button>
+</form>
+<a href="/garments">Back</a>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/navbar.css">
+  <link rel="stylesheet" href="./assets/css/project.css">
+
+  <style>
+    .about-me {
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div>
+      <div>
+        <img src="./assets/images/logo.png" alt="" style="width: 45px; margin-right: 10px;">
+      </div>
+      <div>
+        <ul class="mobile">
+          <li>
+            <a href="index.html" class="active">Home</a>
+          </li>
+          <li>
+            <a href="./pages/testimonial.html">Testimonials</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <ul style="display: flex; align-items:center">
+        <!-- <li>
+          <a href="https://muhammadfauzan.netlify.app/">Register</a>
+        </li>
+        <li>
+          <a href="https://muhammadfauzan.netlify.app/">Login</a>
+        </li> -->
+        <li class="mobile">
+          <a href="./pages/contact.html" class="contact">Contact</a>
+        </li>
+        <li  class="desktop">
+          <div onclick="buttonMenu()" id="menu" style="cursor: pointer">
+            <img src="./assets/svg/menu.svg" alt="" width="30px">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="menu-container" id="menu-container">
+    <div onclick="buttonMenu()"  style="position: absolute; top: 0; right: 0; margin: 30px; cursor: pointer">
+      <img src="./../assets/svg/close.svg" alt="" style="width: 30px;">
+    </div>
+    <a href="index.html" class="active" >Home</a>
+    <a href="./pages/testimonial.html" >Testimonials</a>
+    <a href="./pages/contact.html" >Contact</a>
+  </div>
+
+
+  <div id="content">
+    <div id="about">
+      <h1 style="margin-bottom: 10px;">Hi Welcome to my hut</h1>
+      <p style="text-align: justify;" class="about-me">
+        Halo, saya adalah seorang pengembang web full stack yang memiliki pengalaman luas dalam berbagai teknologi dan
+        alat pengembangan web modern. Dengan keahlian mendalam dalam HTML, CSS, dan JavaScript, saya memiliki kemampuan
+        untuk merancang dan membangun tampilan web yang menarik dan responsif, menghadirkan pengalaman pengguna yang
+        luar biasa.
+        Saya juga memiliki keahlian dalam kerangka kerja dan pustaka seperti React JS dan Vue Js, yang memungkinkan saya
+        untuk menciptakan antarmuka pengguna yang dinamis dan interaktif.
+      </p>
+      <div style="gap: 3px; margin: 30px 0px; display: flex; align-items:center; flex-wrap: wrap;">
+        <div style="margin-right: 5px">
+          <a href="https://muhammadfauzan.netlify.app/" id="contact">Contact</a>
+        </div>
+        <a href="https://muhammadfauzan.netlify.app/" id="download" style="display: flex; margin-left: 0">
+          download CV
+          <img src="./assets/svg/download.svg" alt="SVG Image" style="width: 25px; margin-left: 5px">
+        </a>
+      </div>
+
+      <div id="social-media">
+        <a href="https://www.linkedin.com/in/muhammad-fauzan-046246253/">
+          <img src="./assets/svg/linkind.svg" alt="SVG Image" style="width: 40px;">
+        </a>
+        <a href="https://www.instagram.com/fauzanyanuarputra/">
+          <img src="./assets/svg/instagram.svg" alt="SVG Image" style="width: 35px;">
+        </a>
+        <a href="https://muhammadfauzan.netlify.app/">
+          <img src="./assets/svg/facebook.svg" alt="SVG Image" style="width: 38px;">
+        </a>
+        <a href="https://muhammadfauzan.netlify.app/">
+          <img src="./assets/svg/twitter.svg" alt="SVG Image" style="width: 40px;">
+
+        </a>
+      </div>
+    </div>
+    <div id="card">
+      <img src="./assets/images/me.jpeg" alt="">
+      <div style="padding: 20px;">
+        <p style=" font-weight: 500; font-size: 15px">Muhammad Fauzan</p>
+        <p>Fullstack Developer</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-project" style="margin: 50px auto;" id="my-project">
+    <h1 style="margin: 20px 0px;" class="center"  >MY PROJECT</h1>
+    <div style="display: flex; justify-content:end ; margin:20px 0px">
+      <button onclick="showAdd()" style="display: flex; align-items:center; background-color: orangered; color: white; padding: 10px 30px; border-radius:10px; font-weight: 600">
+        <img src="../assets/svg/create.svg" alt="" width="25" style="margin-right: 6px">
+        ADD PROJECT
+      </button>
+    </div>
+    <div id="content-card-project">
+
+    </div>
+  </div>
+
+  <div onclick="showAdd()" class="background-close hidden" style="z-index: 2001;"></div>
+  <form onsubmit="addBlog(event)" id="form-project" class="hidden" style="position: block; overflow: auto; z-index: 20002" >
+      <div style="position: absolute; top:0; right: 40px; margin:10px;  justify-content: end;">
+        <div onclick="showAdd()" style=" padding:5px; border-radius:100%; cursor: pointer; position: fixed;">
+          <img src="./../assets/svg/close.svg" alt="" style="width: 30px;">
+        </div>
+      </div>
+      <h1>ADD MY PROJECT</h1>
+      <div class="input-form">
+        <label for="project-name" class="judul">Project Name</label>
+        <input type="text" id="project-name" required>
+      </div>
+      <div class="date-project input-form">
+        <div>
+          <label for="start-date"  class="judul">Start Date</label>
+          <input type="date" id="start-date" required>
+        </div>
+        <div>
+          <label for="end-date" class="judul">End Date</label>
+          <input type="date" id="end-date" required>
+        </div>
+      </div>
+      <span class="date-validate-null hidden" style="color: red; margin: 5px 0px">start date & en date tidal boleh kosong</span>
+      <span class="date-validate hidden" style="color: red; margin: 5px 0px">Tanggal akhir harus setelah tanggal mulai</span>
+      <div class="input-form">
+        <label for="description" class="judul deskription">Description</label>
+        <textarea type="text" id="description" style="height: 100px;" required></textarea>
+        <span class=" deskripsi-error-validate hidden" style="color: red; margin: 5px 0px">Deskripsi harus lebih dari 150 karakter</span>
+      </div>
+      <div class="input-form">
+        <label for="checkbox" class="judul checkox-judul">Technologies</label>
+        <div class="tech-check">
+          <div class="checkbox">
+            <input type="checkbox"  name="checkbox-group" id="node-js" data-tech="node-js">
+            <img src="./../assets/svg/node-js.svg" alt="" width="20px" style="margin-right: 5px;">
+            <label for="node-js">Node Js</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox"  name="checkbox-group" id="react-js" data-tech="react">
+            <img src="./../assets/svg/react.svg" alt="" width="20px" style="margin-right: 5px;">
+            <label for="react-js">React Js</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox"  name="checkbox-group" id="next-js" data-tech="next-js">
+            <img src="./../assets/svg/next-js.svg" alt="" width="20px" style="margin-right: 5px;">
+            <label for="next-js">Next Js</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox"  name="checkbox-group" id="typescript" data-tech="typescript">
+            <img src="./../assets/svg/typescript.svg" alt="" width="20px" style="margin-right: 5px;">
+            <label for="typescript">TypeScript</label>
+          </div>
+        </div>
+        <span class=" checkbox-error-validate hidden" style="color: red; margin: 5px 0px">Pilih Setidaknya salah satu</span>
+      </div>
+      <div class="input-form" >
+        <label for="" class="judul" >Pilih Gambar </label>
+        <img src="" alt="">
+        <div style="display:flex; margin-top:5px; position:relative;" class="custom-file" >
+          <label class="custom-file-input">
+            Choose File
+            <input type="file" id="image" required>
+          </label>
+          <input type="text" name="" id="">
+          <div style="position: absolute; right:0;bottom:0; top:0; height:100%; margin-top:0; padding: 0px 10px; display:flex; justify-content:center; align-items:center; ">
+              <img src="./../assets/svg/link.svg" alt="" style="width: 20px; ">
+          </div>
+        </div>
+      </div>
+      <img id="image-preview" src="" alt="" style="width: 100%; height: 250px; object-fit:cover" class="hidden">
+
+
+      <div style="display: flex; justify-content:end">
+        <button type="submit">Submit</button>
+      </div>
+  </form>
+  
+  
+  <script>
+    document.getElementById("description").value = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quis aut veritatis est officia, nobis ut corrupti nemo esse incidunt laboriosam suscipit animi quaerat quasi asperiores veniam facere maxime saepe, repellendus provident praesentium? Culpa molestias atque fugiat deleniti eos numquam est officiis hic ratione deserunt. Non, impedit. Delectus similique quae voluptas ullam, debitis, atque natus id ducimus ipsum unde, voluptate dolores perspiciatis velit repellendus deserunt recusandae. Ab doloremque tempora voluptatum voluptates laborum iste, quo, consequuntur accusamus magni porro eos soluta? Eligendi est eum quia rem dignissimos? Repellendus, explicabo quisquam architecto voluptate est aliquam esse eos sunt aperiam sit ab voluptatibus, nam, quas soluta reprehenderit natus ea dolorum officia ut? Fuga tempore molestias eligendi earum consequuntur voluptas consequatur nostrum optio architecto in consectetur libero nam recusandae quasi reiciendis, porro corrupti voluptates qui beatae perferendis quaerat. Consequatur quod necessitatibus quisquam ipsam optio, impedit nihil, illum vel velit animi ipsum omnis veniam aliquid?";
+    const startDateInput = document.getElementById("start-date");
+    const currentDate = new Date();
+    startDateInput.value = currentDate.toISOString().substr(0, 10);
+  </script>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/index.js"></script>
+</body>
+</html>
+

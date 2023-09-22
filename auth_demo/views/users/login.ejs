@@ -1,0 +1,20 @@
+<%- include(`${partialsDir}/layouts/header`) %>
+
+<div class="bg-black flex min-h-screen gap-2 justify-center items-center">
+  <div>
+    Login
+    <form action="/login" method="POST">
+      <div class="w-full flex flex-col">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="text-black"/>
+      </div>
+      <div class="w-full flex flex-col">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="text-black"/>
+      </div>  
+      <button>Login</button>  
+    </form>
+  </div>
+</div>
+
+<%- include(`${partialsDir}/layouts/footer`) %>

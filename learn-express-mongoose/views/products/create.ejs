@@ -1,0 +1,31 @@
+<h1>Add Product</h1>
+<form action="/garments/<%= garment_id %>/products" method="POST">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="">
+  </div>
+  <div>
+    <label for="brand">Brand</label>
+    <input type="text" name="brand" id="brand" value="">
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input type="number" name="price" id="price" value="">
+  </div>
+  <div>
+    <label for="color">Color</label>
+    <input type="text" name="color" id="color" value="">
+  </div>
+  <div>
+    <label for="name">Category</label>
+    <select name="category" id="category">
+      <option value="" selected>Pilih</option>
+      <option value="Aksesoris">Aksesoris</option>
+      <option value="Topi">Topi</option>
+      <option value="Baju">Baju</option>
+      <option value="Celana">Celana</option>
+      <option value="Sepatu">Sepatu</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>

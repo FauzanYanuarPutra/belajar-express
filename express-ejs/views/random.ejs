@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs'); %>
+
+    <%- include('partials/navbar.ejs'); %>
+  <h1>Random Number: <%= random %></h1>
+  <% if(random % 2 === 0) { %>
+    <h1>Angka Genap</h1>
+  <% } else { %>
+    <h1>Angka Ganjil</h1>
+  <% } %>
+
+  <h1>That number is: <%= random % 2 === 0 ? 'even' : 'odd' %></h1>
+
+<%- include('partials/footer.ejs') %>

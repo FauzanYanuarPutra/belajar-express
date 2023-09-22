@@ -1,0 +1,19 @@
+<h1><%= product.name %> - <%= product.brand %></h1>
+<ul>
+  <%= flash_message  %>
+  <li><%= product.price %></li>
+  <li><%= product.color %></li>
+  <li>
+    <a href="/products?category=<%= product.category %>">
+      <%= product.category %>
+    </a>
+  </li>
+</ul>
+
+<h2>Garment: <a href="/garments/<%= product.garment.id %>"><%= product.garment.name %></a></h2>
+
+<a href="/products/<%= product._id %>/edit">Edit</a>
+<form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+  <button type="submit">DELETE</button>
+</form>
+<a href="/products">Back</a>
